@@ -1,12 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
-
+console.log(path.resolve(__dirname,'./build'),'llalla')
 module.exports={
-  entry:['webpack/hot/dev-server',path.resolve(__dirname, './src/main.js')],
+  devtool:"eval-source-map",
+  entry:['webpack/hot/dev-server',__dirname+ '/src/main.js'],
   output:{
-    path: path.resolve(__dirname,'./build'),
+    path: __dirname + '/build',
     filename:'bundle.js',
-    publicPath:'/',
+    // publicPath:'/',
   },
   devServer:{
     inline:true,
@@ -18,6 +19,7 @@ module.exports={
         test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
+        
       }
     ]
   },

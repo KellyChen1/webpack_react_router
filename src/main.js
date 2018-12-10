@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
+import InclusiveRoute from './inclusive-route';
+import ExclusiveRoute from './exclusive-route'
 
 ReactDOM.render(
-  <h1>hello</h1>,
+  <ExclusiveRoute/>,
   document.getElementById('app')
 )
